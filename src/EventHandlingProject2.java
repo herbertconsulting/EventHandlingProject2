@@ -12,9 +12,12 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class EventHandlingProject2 extends Application {
@@ -66,18 +69,30 @@ class CustomPane extends StackPane {
     }
     // Methods to show the Front, Back and Side images when an action event (button press) takes place
     public void showFront() {
+        Label labelF = new Label("This is the front of the AT building");
+        labelF.setFont(Font.font("Arial", 18));
+        StackPane.setAlignment(labelF, Pos.BOTTOM_CENTER);
         ImageView imageView = new ImageView(new Image("at_ext_front_door.png"));
-        getChildren().add(imageView);
+        getChildren().addAll(imageView, labelF);
     }
 
     public void showBack() {
+        getChildren().clear();
+        Label labelB = new Label("This is the back of the AT building");
+        labelB.setFont(Font.font("Arial", 18));
+        StackPane.setAlignment(labelB, Pos.BOTTOM_CENTER);
         ImageView imageView = new ImageView(new Image("at_ext_back_door.png"));
-        getChildren().add(imageView);
+        getChildren().addAll(imageView, labelB);
     }
     public void showSide() {
+        getChildren().clear();
+        Label labelS = new Label("This is the side of the AT building");
+        labelS.setFont(Font.font("Arial", 18));
+        StackPane.setAlignment(labelS, Pos.BOTTOM_CENTER);
         ImageView imageView = new ImageView(new Image("at_ext_side_door.png"));
-        getChildren().add(imageView);
+        getChildren().addAll(imageView, labelS);
     }
 }
+
 
 
