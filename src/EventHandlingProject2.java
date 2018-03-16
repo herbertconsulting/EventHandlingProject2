@@ -17,7 +17,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class EventHandlingProject2 extends Application {
@@ -69,6 +68,7 @@ class CustomPane extends StackPane {
     }
     // Methods to show the Front, Back and Side images when an action event (button press) takes place
     public void showFront() {
+        getChildren().clear();
         Label labelF = new Label("This is the front of the AT building");
         labelF.setFont(Font.font("Arial", 18));
         StackPane.setAlignment(labelF, Pos.BOTTOM_CENTER);
